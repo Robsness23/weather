@@ -9,7 +9,6 @@ export default function Weather() {
         <li>Thursday, 21:30</li>
         <li>Rain</li>
       </ul>
-      Hello from Weather
     </div>
   )
 }
