@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import FormattedDate from './FormattedDate'
+
+import WeatherInfo from './WeatherInfo'
 import './Weather.css'
 
 export default function Weather(props) {
@@ -21,10 +22,14 @@ export default function Weather(props) {
     })
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+  }
+
   if (weatherData.load) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input 
@@ -43,25 +48,8 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1 className="text-capitalize">{weatherData.condition}</h1>
-        <ul>
-          <li>{weatherData.city}</li>
-          <li><FormattedDate date={weatherData.date} /></li>
-        </ul>
-        <div className="row mt-3">
-          <div className="col-6">
-            <img src={weatherData.iconUrl} alt={weatherData.condition} style={{maxWidth: 90}} />
-            <span className="temperature">{Math.round(weatherData.temp)}</span>
-            <span className="unit">°C</span>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>Feels like: {Math.round(weatherData.feelsLike)}°C</li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind}km/h</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData}/>
+        
       </div>
     )
 
