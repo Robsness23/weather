@@ -19,7 +19,7 @@ export default function Weather(props) {
       condition: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       feelsLike: response.data.temperature.feels_like,
-      iconUrl: 'https://duckduckgo.com/assets/weather/icons/partly-cloudy-night.svg'
+      icon: response.data.condition.icon_url,
     })
   }
 

@@ -11,11 +11,11 @@ export default function App() {
       A project coded by {" "}<a 
       href="https://www.robyn-smith.co.uk/"
       target="_blank"
-      rel="noreferrer">Robyn Smith</a>.{" "}
+      rel="noopener noreferrer">Robyn Smith</a>.{" "}
       You can find it on {" "} <a 
       href="https://github.com/Robsness23/weather" 
       target="_blank" 
-      rel="noreferrer">
+      rel="noopener noreferrer">
         GitHub
       </a>.
     </footer>
